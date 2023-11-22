@@ -1,12 +1,28 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from "@react-navigation/native";
+import MainPage from './Screens/MainPage';
+import RoomName from './Screens/RoomName';
+import RoomChat from './Screens/RoomChat';
+
+
+const Stack = createStackNavigator();
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+  return(
+    <NavigationContainer >
+      <Stack.Navigator screenOptions={
+        {
+          headerShown: false,
+          animation: 'slide_from_right',
+        }
+      }>
+        <Stack.Screen name='MainPage' component={MainPage} />
+        <Stack.Screen name='RoomName' component={RoomName} />
+        <Stack.Screen name='RoomChat' component={RoomChat} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
