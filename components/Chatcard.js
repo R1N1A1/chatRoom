@@ -16,9 +16,12 @@ const Chatcard = ({message, username}) => {
     <View style={styles.master}>
       {
         (message.username == currentUser)? 
-        <View style={styles.right_align}>
-            <Text>hello</Text>
-          <Image source={{uri: message.profile_pic}} style={styles.logo_right} />
+        <View style={styles.left_align}>
+            <Image source={{uri: message.profile_pic}} style={styles.logo_left} />
+            <View style={styles.user}>
+              <Text style={styles.txt1}>{message.username}</Text>
+              <Text style={styles.txt2}>{message.message}</Text>
+            </View>
           </View>
         :
           <View style={styles.left_align}>
@@ -51,15 +54,16 @@ const styles = StyleSheet.create({
     backgroundColor: 'pink',
     left: 100,
   },
-  // user: {
-  //   marginTop: 10,
-  //   padding: 10,
-  //   backgroundColor: '#FF2E63',
-  //   alignItems: 'center',
-  //   justifyContent: 'center',
-  //   marginRight: 10,
-  //   borderRadius: 20,
-  // },
+  user: {
+    // marginTop: 10,
+    padding: 10,
+    backgroundColor: '#FF2E63',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginLeft: 10,
+    borderRadius: 20,
+    width: '90%',
+  },
   nonuser:{
     padding: 10,
     backgroundColor: '#08D9D6',
@@ -80,18 +84,18 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     width: 35,
   },
-  // txt1: {
-  //   fontSize: 15,
-  //   color: '#EAEAEA',
-  //   textDecorationLine: 'underline',
-  //   fontWeight: 'bold',
-  //   left: -50,
-  // },
-  // txt2: {
-  //   left: 0,
-  //   fontSize: 18,
-  //   color: '#252A34',
-  //   marginLeft: 12,
-  //   alignSelf: 'flex-start', 
-  // },
+  txt1: {
+    fontSize: 15,
+    color: '#EAEAEA',
+    textDecorationLine: 'underline',
+    fontWeight: 'bold',
+    left: -50,
+  },
+  txt2: {
+    left: 0,
+    fontSize: 18,
+    color: '#252A34',
+    marginLeft: 12,
+    alignSelf: 'flex-start', 
+  },
 })
