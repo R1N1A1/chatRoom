@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
   user: {
     // marginTop: 10,
     padding: 10,
-    backgroundColor: '#FF2E63',
+    backgroundColor: '#b1ed8b',
     justifyContent: 'center',
     alignItems: 'center',
     marginLeft: 10,
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
   },
   nonuser:{
     padding: 10,
-    backgroundColor: '#08D9D6',
+    backgroundColor: '#fefefe',
     justifyContent: 'center',
     alignItems: 'center',
     marginLeft: 10,
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
   },
   txt1: {
     fontSize: 15,
-    color: '#EAEAEA',
+    color: 'black',
     textDecorationLine: 'underline',
     fontWeight: 'bold',
     left: -50,
