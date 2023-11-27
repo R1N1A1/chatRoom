@@ -6,7 +6,7 @@ import Topbar from '../components/Topbar';
 import Chatcard from '../components/Chatcard';
 import { ScrollView } from 'react-native-gesture-handler';
 import  db  from '../components/firebase-config';
-import { addDoc ,collection ,onSnapshot,orderBy,query,serverTimestamp, where} from 'firebase/firestore';
+import { Timestamp, addDoc,collection ,onSnapshot,orderBy,query,serverTimestamp, where} from 'firebase/firestore';
 
 const RoomChat = (p) => {
     // const navigation = useNavigation();
@@ -15,6 +15,7 @@ const RoomChat = (p) => {
     const [newmsg, setNewmsg] = useState('');
     console.log(username, roomname,newmsg);
     const [chat,setChat] = useState([]);
+    const d=new Date();
 
 
 
@@ -66,7 +67,7 @@ const RoomChat = (p) => {
      <ScrollView style={styles.scroll}>
      {
         chat.map((message) => {
-            return <Chatcard message={message} username={username}/>
+            return <Chatcard key={d.getTime} message={message} username={username}/>
         })
       }
      </ScrollView>

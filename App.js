@@ -5,6 +5,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import MainPage from './Screens/MainPage';
 import RoomName from './Screens/RoomName';
 import RoomChat from './Screens/RoomChat';
+import ChatScreen from './Screens/ChatScreen';
 
 
 const Stack = createStackNavigator();
@@ -21,6 +22,7 @@ export default function App() {
         <Stack.Screen name='MainPage' component={MainPage} />
         <Stack.Screen name='RoomName' component={RoomName} />
         <Stack.Screen name='RoomChat' component={RoomChat} />
+        <Stack.Screen name='ChatScreen' component={ChatScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
